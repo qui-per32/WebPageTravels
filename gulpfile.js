@@ -25,7 +25,7 @@ gulp.task('css', () => {
         .pipe(gulp.dest('public/dist/css'));
 });
 
-gulp.task('default', ['browser', 'scripts', 'css']);
+gulp.task('default', ['scripts', 'css']);
 gulp.task('browser', () => {
     browserSync.init({
         server: {
