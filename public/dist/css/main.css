@@ -2,21 +2,49 @@ h1 {
     color: blue;
 }
 
-h2 {
-    color: aquamarine;
+.pageLinks a {
+    color: white;
+    margin-top: 25px;
 }
 
-h3 {
-    color: black;
-}
-h4{
- color: orange;   
+.pageLinks a:hover {
+    color: blue;
 }
 
-nav a {
-    color: yellow;
+.justify-content-end {
+    margin-top: 20px;
+    margin-right: 1px;
 }
 
-nav a:hover {
-    color: pink;
+.image {
+    background: url("/images/nathan.jpg") no-repeat center top;
+    background-position: center center;
+    text-align: center;
+    min-height: 400px;
+    width: 100%;
+    background-size: cover;
+}
+
+.icon {
+    height: 60px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.face {
+    height: 30px;
+    width: 35px;
+}
+
+.whats {
+    height: 30px;
+    width: 35px;
+}
+
+.tweet {
+    height: 30px;
+    width: 35px;
+}
+.icons {
+    margin: 0 5px;
 }
