@@ -3,11 +3,14 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www"
+    "start:backend": "nodemon ./bin/www",
+    "start:frontend": "gulp",
+    "start": "concurrently \"npm run start:backend\" \"npm run start:frontend\""
   },
   "dependencies": {
     "bootstrap": "^4.1.1",
     "browser-sync": "^2.24.4",
+    "concurrently": "^3.5.1",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "express": "~4.16.0",

@@ -1,5 +1,4 @@
 let gulp = require('gulp'),
-    browserSync = require('browser-sync'),
     uglify = require('gulp-uglify');
     concat = require('gulp-concat');
     rename = require('gulp-rename');
@@ -18,21 +17,21 @@ gulp.task('scripts', () => {
 
 gulp.task('css', () => {
     return gulp.src('public/stylesheets/*.css')
-        .pipe(concat('stlye.css'))
+        .pipe(concat('main.css'))
         .pipe(gulp.dest('public/dist/css'))
-        .pipe(rename('style.min.css'))
+        .pipe(rename('main.min.css'))
         .pipe(css())
         .pipe(gulp.dest('public/dist/css'));
 });
 
 gulp.task('default', ['scripts', 'css']);
-gulp.task('browser', () => {
-    browserSync.init({
-        server: {
-            baseDir: "./"
-        }
-    });
-});
+// gulp.task('browser', () => {
+//     browserSync.init({
+//         server: {
+//             baseDir: "./"
+//         }
+//     });
+// });
 
 gulp.watch('public/javascripts/*.js').on('change', () => {
     return gulp.src('public/javascripts/*.js')
@@ -58,6 +57,6 @@ gulp.watch('public/stylesheets/**/*.css').on('change', () => {
 
 
 
-gulp.watch(['index.html', './public/stylesheets/main.css', './public/javascripts/main.js']).on('change', () => {
-    browserSync.reload();
-});
+// gulp.watch(['index.html', './public/stylesheets/main.css', './public/javascripts/main.js']).on('change', () => {
+//     browserSync.reload();
+// });
