@@ -1,0 +1,20 @@
+{
+  "name": "webpagetravels",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Enrique <qui.per.gonz32@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/qui-per32/WebPageTravels",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^4.1.1"
+  }
+}
