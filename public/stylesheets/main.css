@@ -11,7 +11,6 @@ h2 {
     margin-top: 20px;
 }
 
-
 .socialMedia {
     margin-top: 20px;
     margin-right: 10px;
@@ -33,32 +32,32 @@ h2 {
 
 .face {
     height: 30px;
-    width: 35px;
+    width: 30px;
 }
 
 .whats {
     height: 30px;
-    width: 35px;
+    width: 30px;
 }
 
 .tweet {
     height: 30px;
-    width: 35px;
+    width: 30px;
 }
 
 .instagram {
     height: 30px;
-    width: 35px;
+    width: 30px;
 }
 
 .youtube {
-    height: 30px;
+    height: 35px;
     width: 35px;
 }
 
 .linkedin {
     height: 30px;
-    width: 35px;
+    width: 30px;
 }
 
 .wrapperBtn {
@@ -76,10 +75,10 @@ h2 {
 }
 
 .card-deck {
-     margin-left: 200px;
-     margin-right: 200px;
-     margin-bottom: 50px;
-     margin-top: 50px;
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-bottom: 50px;
+    margin-top: 50px;
 }
 
 .card {
@@ -108,10 +107,13 @@ h2 {
 
 .contact {
     background-color: #FCFCFC;
-    min-height: 600px;
-    max-height: 700px;
+    min-height: 500px;
+    max-height: 600px;
     width: 100%;
     margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .whoCard {
@@ -121,12 +123,12 @@ h2 {
 
 .btn-primary {
     background-color: #141939;
-    color: #FEF100; 
+    color: #FEF100;
 }
 
 .textQS {
     text-align: justify;
-        padding: 5px 10px;
+    padding: 5px 10px;
 }
 
 .titleQS {
@@ -152,4 +154,94 @@ h2 {
 
 .footerNewsletter {
     margin-top: 20px;
+}
+
+.textDescription {
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+}
+
+.text-block {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: #141939;
+    color: white;
+    word-wrap: break-word;
+}
+
+.beijing h4 {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: yellow;
+    color: black;
+    padding: 1rem;
+}
+
+.buenosAires h4 {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: yellow;
+    color: black;
+    padding: 1rem;
+}
+
+.madrid h4 {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: yellow;
+    color: black;
+    padding: 1rem;
+}
+
+.mexico h4 {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: yellow;
+    color: black;
+    padding: 1rem;
+}
+
+.nuevaYork h4 {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: yellow;
+    color: black;
+    padding: 1rem;
+}
+
+.tokyo h4 {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: yellow;
+    color: black;
+    padding: 1rem;
+}
+
+.contactInfo {
+    font-size: 14px;
+    margin-bottom: 40px;
+}
+
+.footerBrand {
+    border-top: 1px solid black;
+    margin-top: 100px;
+}
+
+iframe {
+    width: 350px;
+    height: 450px;
 }
