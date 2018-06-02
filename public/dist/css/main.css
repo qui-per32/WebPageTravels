@@ -20,7 +20,7 @@ h2 {
     background: url("/images/nathan.jpg") no-repeat center top;
     background-position: center center;
     text-align: center;
-    min-height: 500px;
+    min-height: 800px;
     width: 100%;
     background-size: cover;
 }
@@ -65,7 +65,13 @@ h2 {
 }
 
 .container-fluid {
-    font-size: calc(5px + 1vw);
+    font-family: 'Cabin',sans-serif;
+    font-size: 20px;
+}
+
+.buttonHeader {
+    font-size: xx-large;
+    width: 230px;
 }
 
 .card-img-top {
@@ -89,11 +95,14 @@ h2 {
     background: url("/images/travel_1.jpg") no-repeat center top;
     background-position: center center;
     text-align: center;
-    min-height: 500px;
+    min-height: 700px;
+    max-height: 800px;
     width: 100%;
     background-size: cover;
     display: flex;
     justify-content: center;
+    align-items: center;
+    margin-top: 50px;
 }
 
 .footer {
@@ -116,11 +125,6 @@ h2 {
     justify-content: center;
 }
 
-.whoCard {
-    width: 22rem;
-    height: 17rem;
-}
-
 .btn-primary {
     background-color: #141939;
     color: #FEF100;
@@ -128,7 +132,7 @@ h2 {
 
 .textQS {
     text-align: justify;
-    padding: 5px 10px;
+    padding: 5px 20px;
 }
 
 .titleQS {
@@ -137,11 +141,21 @@ h2 {
     text-decoration: underline;
     color: #131939;
     text-decoration-color: #FEF100;
+    padding-left: 20px;
 }
 
-#inputEmail4 {
+#subscribeButton {
     width: 20vw;
     margin-top: 20px;
+    padding-left: 0;
+}
+.textFoot {
+    margin-bottom: 10px;
+    margin-top: 30px;
+}
+
+.describeButton {
+    font-size: 30px;
 }
 
 .footerContact {
@@ -154,12 +168,6 @@ h2 {
 
 .footerNewsletter {
     margin-top: 20px;
-}
-
-.textDescription {
-    min-height: 500px;
-    display: flex;
-    align-items: center;
 }
 
 .text-block {
@@ -239,6 +247,7 @@ h2 {
 .footerBrand {
     border-top: 1px solid black;
     margin-top: 100px;
+    padding-bottom: 15px;
 }
 
 iframe {
