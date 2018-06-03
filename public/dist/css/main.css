@@ -20,7 +20,7 @@ h2 {
     background: url("/images/nathan.jpg") no-repeat center top;
     background-position: center center;
     text-align: center;
-    min-height: 800px;
+    min-height: 700px;
     width: 100%;
     background-size: cover;
 }
@@ -254,4 +254,8 @@ h2 {
 iframe {
     width: 350px;
     height: 450px;
+}
+
+.figcaption {
+    padding-left: 10px;
 }
