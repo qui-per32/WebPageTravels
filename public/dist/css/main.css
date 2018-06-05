@@ -65,7 +65,7 @@ h2 {
 }
 
 .container-fluid {
-    font-family: 'Cabin',sans-serif;
+    font-family: 'Cabin', sans-serif;
     font-size: 20px;
 }
 
@@ -108,7 +108,7 @@ h2 {
 .footer {
     background-color: #141939;
     min-height: 400px;
-    max-height: 500px;
+    max-height: 630px;
     width: 100%;
     margin-top: 50px;
     color: white;
@@ -149,6 +149,7 @@ h2 {
     margin-top: 20px;
     padding-left: 0;
 }
+
 .textFoot {
     margin-bottom: 10px;
     margin-top: 30px;
@@ -258,4 +259,34 @@ iframe {
 
 .travelHeader {
     padding-top: 100px;
+}
+
+.logoWeb {
+    height: 20px;
+    margin-top: 0px;
+}
+
+.navbarColor {
+    background-color: white;
+}
+
+.carouselImages {
+    margin: auto;
+}
+
+.prevIcon {
+    background-color: #141939;
+}
+
+.nextIcon {
+    background-color: #141939;
+}
+
+.carouselText {
+    position: absolute;
+    top: 0;
+    width: 80%;
+    background-color: #141939;
+    color: white;
+    word-wrap: break-word;
 }
