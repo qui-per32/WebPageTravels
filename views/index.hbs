@@ -81,50 +81,53 @@
 
     <div class="row">
         <div class="col-12">
-                <div id="Images" class="carousel d-none d-sm-block d-lg-none" data-ride="false">
-                    <ol class="carousel-indicators">
-                        <li data-target="#Images" data-slide-to="0" class="active"></li>
-                        <li data-target="#Images" data-slide-to="1"></li>
-                        <li data-target="#Images" data-slide-to="2"></li>
-                    </ol>
-                    <div class="carousel-inner">
-                        <div class="carousel-item text-center active beijing">
-                            <img class="d-block image-fluid carouselImages" src="/images/beijing.JPG" alt="beijing">
-                            <figure class="text-block text-center carouselText">
-                                <figcaption>
-                                    <p>Save 90$ pay only</p>
-                                    <h4>359$</h4>
-                                </figcaption>
-                            </figure>
+            <div id="Images" class="carousel d-none d-sm-block d-lg-none" data-ride="false">
+                <ol class="carousel-indicators">
+                    <li data-target="#Images" data-slide-to="0" class="active"></li>
+                    <li data-target="#Images" data-slide-to="1"></li>
+                    <li data-target="#Images" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item text-center active beijing">
+                        <img class="d-block image-fluid carouselImages" src="/images/beijing.JPG" alt="beijing">
+                        <div class="card-img-overlay discountImage">
+                            <p class="card-text discountImage">hola.</p>
+                            <p class="card-text ">hola</p>
                         </div>
-                        <div class="carousel-item text-center buenosAires">
-                            <img class="d-block image-fluid carouselImages" src="/images/buenos_aires.JPG" alt="Buenos aires">
-                            <figure class="text-block text-center carouselText">
-                                <figcaption>
-                                    <p>Save 35$ pay only</p>
-                                    <h4>519$</h4>
-                                </figcaption>
-                            </figure>
-                        </div>
-                        <div class="carousel-item text-center ciudadMexico">
-                            <img class="d-block image-fluid carouselImages" src="/images/ciudad_mexico.JPG" alt="ciudad mexico">
-                            <figure class="text-block text-center carouselText">
-                                <figcaption>
-                                    <p>Save 35$ pay only</p>
-                                    <h4>519$</h4>
-                                </figcaption>
-                            </figure>
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Madrid</h5>
                         </div>
                     </div>
-                    <a class="carousel-control-prev" href="#Images" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon prevIcon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#Images" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon nextIcon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
+                    <div class="carousel-item text-center buenosAires">
+                        <img class="d-block image-fluid carouselImages" src="/images/buenos_aires.JPG" alt="Buenos aires">
+                        <div class="card-img-overlay">
+                            <p class="card-text">hola.</p>
+                            <p class="card-text">hola</p>
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Madrid</h5>
+                        </div>
+                    </div>
+                    <div class="carousel-item text-center ciudadMexico">
+                        <img class="d-block image-fluid carouselImages" src="/images/ciudad_mexico.JPG" alt="ciudad mexico">
+                        <div class="card-img-overlay">
+                            <p class="card-text">hola.</p>
+                            <p class="card-text">hola</p>
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Madrid</h5>
+                        </div>
+                    </div>
                 </div>
+                <a class="carousel-control-prev" href="#Images" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon prevIcon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#Images" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon nextIcon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
         </div>
     </div>
 
@@ -133,11 +136,11 @@
 </div>
 
 
-<div class="container-fluid whoBackground" id="explication">
-    <div class="row">
-        <div class="col-12">
+<div class="container-fluid d-none d-lg-block" id="explication">
+    <div class="row whoBackground">
+        <div class="col-12 d-none d-lg-block">
             <div class="row">
-                <div class="col-6 offset-6">
+                <div class="col-6 offset-6 d-none d-lg-block">
                     <div class="card" style="width: 30rem;">
                         <div class="card-body">
                             <h5 class="titleQS card-title">
@@ -155,7 +158,29 @@
         </div>
     </div>
 </div>
+
+
+<div class="container-fluid d-none d-sm-block d-lg-none d-block d-xs-block d-md-block QSBox" id="explication">
+    <div class="row ">
+        <div class="col-12">
+            <div class="card" style="width: 30rem;">
+                <div class="card-body">
+                    <h5 class="titleQS card-title">
+                        QUIENES SOMOS
+                    </h5>
+                    <p class="textQS card-text">GeekHubs Travels es una agencia de viajes online creada en 2009 por un equipo de viajeros entusiastas
+                        que deciden hacer de su pasión por conocer el mundo un modo de vida. Desde nuestros inicios hemos
+                        diseñado más de 500 viajes organizados a diferentes destino de Europa, Norteamérica y Asia. Nuestro
+                        objetivo ahora es ir ampliando nuevos horizontes poco a poco.</p>
+                    <a href="#" class="btn btn-primary btn-lg text-uppercase describeButton">descubrir</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+</div>
+
+
 
 <div class="container-fluid contact d-none d-lg-block" id="formMap">
     <div class="row">
@@ -165,7 +190,7 @@
         <div class="col-4 d-none d-lg-block">
             <div class="mapGoogle">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d513.8216667893546!2d-0.3561054967107265!3d39.48174063382946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd604898947abad3%3A0x5aae0e0b7fa0358a!2sGeeksHubs+Space+Valencia!5e0!3m2!1ses!2ses!4v1527777199967"
-                     frameborder="0" style="border:0" allowfullscreen></iframe>
+                    frameborder="0" style="border:0" allowfullscreen></iframe>
             </div>
         </div>
         <div class="col-1 d-none d-lg-block ">
