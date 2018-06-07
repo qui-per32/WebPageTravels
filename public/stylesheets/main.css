@@ -1,28 +1,19 @@
-h1 {
-    color: white;
+/*THEME BODY*/
+
+.container-fluid {
+    font-family: 'Cabin', sans-serif;
+    font-size: 20px;
 }
 
-h2 {
-    color: white;
-}
+/*LAYOUT HEADER*/
 
 .pageLinks a {
-    color: white;
     margin-top: 20px;
 }
 
 .socialMedia {
     margin-top: 20px;
     margin-right: 10px;
-}
-
-.image {
-    background: url("/images/nathan.jpg") no-repeat center top;
-    background-position: center center;
-    text-align: center;
-    min-height: 700px;
-    width: 100%;
-    background-size: cover;
 }
 
 .icon {
@@ -64,15 +55,50 @@ h2 {
     padding: 50px;
 }
 
-.container-fluid {
-    font-family: 'Cabin', sans-serif;
-    font-size: 20px;
+.travelHeader {
+    padding-top: 100px;
+}
+
+.logoWeb {
+    height: 20px;
+    margin-top: 0px;
 }
 
 .buttonHeader {
     font-size: xx-large;
     width: 230px;
 }
+
+/*THEME HEADER*/
+
+h1 {
+    color: white;
+}
+
+h2 {
+    color: white;
+}
+
+.pageLinks a {
+    color: white;
+}
+
+.image {
+    background: url("/images/nathan.jpg") no-repeat center top;
+    background-position: center center;
+    text-align: center;
+    min-height: 700px;
+    width: 100%;
+    background-size: cover;
+}
+
+
+
+/*LAYOUT INDEX*/
+
+
+/*CARD IMAGES ON LG*/
+
 
 .card-img-top {
     width: 100%;
@@ -81,104 +107,12 @@ h2 {
 }
 
 .card-deck {
-    margin-left: 200px;
-    margin-right: 200px;
     margin-bottom: 50px;
     margin-top: 50px;
 }
 
 .card {
     border: none;
-}
-
-.whoBackground {
-    background: url("/images/travel_1.jpg") no-repeat center top;
-    background-position: center center;
-    text-align: center;
-    height: 100%;
-    padding-top: 25px;
-    padding-bottom: 25px;
-    width: auto;
-    background-size: cover;
-    display: flex !important;
-    justify-content: center;
-    align-items: center;
-    margin-top: 50px;
-}
-
-.footer {
-    background-color: #141939;
-    min-height: 400px;
-    max-height: 630px;
-    width: 100%;
-    margin-top: 50px;
-    color: white;
-}
-
-.contact {
-    background-color: #FCFCFC;
-    min-height: 500px;
-    max-height: 600px;
-    width: 100%;
-    margin-top: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.btn-primary {
-    background-color: #141939;
-    color: #FEF100;
-}
-
-.textQS {
-    text-align: justify;
-    padding: 5px 20px;
-}
-
-.titleQS {
-    font-size: 30px;
-    text-align: left;
-    text-decoration: underline;
-    color: #131939;
-    text-decoration-color: #FEF100;
-    padding-left: 20px;
-}
-
-#subscribeButton {
-    width: 20vw;
-    margin-top: 20px;
-    padding-left: 0;
-}
-
-.textFoot {
-    margin-bottom: 10px;
-    margin-top: 30px;
-}
-
-.describeButton {
-    font-size: 30px;
-}
-
-.footerContact {
-    margin-top: 20px;
-}
-
-.footerHelp {
-    margin-top: 20px;
-}
-
-.footerNewsletter {
-    margin-top: 20px;
-}
-
-.text-block {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    background-color: #141939;
-    color: white;
-    word-wrap: break-word;
 }
 
 .beijing h4 {
@@ -241,9 +175,144 @@ h2 {
     padding: 1rem;
 }
 
+/*CAROUSEL*/
+
+
+.textBlue {
+    margin: 20px;
+}
+
+.textYellow {
+    margin: 30px;
+    color: darkblue;
+}
+
+#textIdBlue {
+    position: absolute;
+    width: 100%;
+    color: white;
+    font-size: 24px;
+    background-color: darkblue;
+    min-height: 70px;
+    text-align: center;
+    font-size: 18px;
+}
+
+#textIdYellow {
+    position: absolute;
+    width: 100%;
+    font-size: 24px;
+    background-color: yellow;
+    min-height: 100px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carouselImages {
+    margin-top: 50px;
+}
+
+/*LAYOUT AND STYLE WHO*/
+
+
+.whoBackground {
+    background: url("/images/travel_1.jpg") no-repeat center top;
+    background-position: center center;
+    text-align: center;
+    height: 100%;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    width: auto;
+    background-size: cover;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.textQS {
+    text-align: justify;
+    padding: 5px 20px;
+}
+
+.titleQS {
+    font-size: 30px;
+    text-align: left;
+    text-decoration: underline;
+    color: #131939;
+    text-decoration-color: #FEF100;
+    padding-left: 20px;
+}
+
+.btn-primary {
+    background-color: #141939;
+    color: #FEF100;
+}
+
+/*CONTACT*/
+
+.contact {
+    background-color: #FCFCFC;
+    min-height: 500px;
+    max-height: 600px;
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.describeButton {
+    font-size: 30px;
+}
+
+iframe {
+    width: 350px;
+    height: 450px;
+}
+
 .contactInfo {
     font-size: 14px;
     margin-bottom: 40px;
+}
+
+/*FOOTER*/
+
+.footerContact {
+    margin-top: 20px;
+}
+
+.footerHelp {
+    margin-top: 20px;
+}
+
+.footerNewsletter {
+    margin-top: 20px;
+}
+
+.textFoot {
+    margin-bottom: 10px;
+    margin-top: 30px;
+}
+
+.text-block {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: #141939;
+    color: white;
+    word-wrap: break-word;
+}
+
+.footer {
+    background-color: #141939;
+    min-height: 400px;
+    max-height: 660px;
+    width: 100%;
+    margin-top: 50px;
+    color: white;
 }
 
 .footerBrand {
@@ -253,55 +322,19 @@ h2 {
     padding-top: 30px;
 }
 
-iframe {
-    width: 350px;
-    height: 450px;
-}
-
-.travelHeader {
-    padding-top: 100px;
-}
-
-.logoWeb {
-    height: 20px;
-    margin-top: 0px;
-}
-
-.carouselImages {
-    margin: auto;
-}
-
-.prevIcon {
-    background-color: #141939;
-}
-
-.nextIcon {
-    background-color: #141939;
-}
-
-.carouselText {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    background-color: #141939;
-    color: white;
-    word-wrap: break-word;
-}
-
-.QSBox {
-    background: #5DBCD2;
-    margin-top: 50px;
-    height: 100%;
-    padding: 50px 0;
-    width: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+#subscribeButton {
     text-align: center;
+    width: auto;
 }
 
+/*MEDIA QUERY*/
 
 @media (max-width:991px) {
+    .footer {
+        margin-top: 0;
+    }
+
+
     .footerMobile {
         text-align: center;
     }
@@ -309,16 +342,15 @@ iframe {
         text-align: center;
         width: auto;
     }
-
-.QSBox {
-    background: #5DBCD2;
-    margin-top: 50px;
-    height: 100%;
-    padding: 50px 0;
-    width: auto;
-    display: flex !important;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
+    .QSBox {
+        background: #5DBCD2;
+        margin-top: 50px;
+        height: 100%;
+        padding: 50px 0;
+        width: auto;
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
 }
