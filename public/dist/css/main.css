@@ -123,6 +123,7 @@
     background-color: #141939;
     color: white;
     word-wrap: break-word;
+    padding-left: 10px;
 }
 
 .beijing h4 {
@@ -377,12 +378,12 @@ iframe {
 }
 
 .linkLogin {
-    color: white;
+    color: #516532;
     text-decoration: none;
 }
 
 .linkLogin:hover {
-    color: white;
+    color: #516532;
     text-decoration: none;
 }
 
@@ -392,6 +393,10 @@ iframe {
 
 .linkPassword {
     padding-bottom: 10px;
+}
+
+.errorLogin {
+    color: red;
 }
 
 

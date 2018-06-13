@@ -4,21 +4,30 @@
             <div class="row loginContainer text-center d-flex align-items-center">
                 <div class="offset-2 col-8">
                     <h1 class="titleLogin">LOGIN</h1>
-                    <form>
+                    <form method="POST">
                         <div class="form-row">
-                            <input type="text" class="form-control border border-info inputRegister" placeholder="Usuario o email">
+                            <input type="text" class="form-control border border-info inputRegister" placeholder="Usuario o email" name="user">
                         </div>
                         <div class="form-row aling-items-center">
-                            <input type="email" class="form-control border border-info inputRegister" placeholder="contraseña">
+                            <input type="password" class="form-control border border-info inputRegister" placeholder="contraseña" name="inputPass">
                         </div>
-                    </form>
+                         {{#if info}}
+                        <div>
+                            <p> </p>
+                            <div class="alert alert-success alert-dismissible">
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <strong>ERROR</strong> {{info}}
+                            </div>
+                        </div>
+                        {{/if}}
+                   
                     <div class="buttonLogin">
                         <button type="submit" class="btn-lg btn-warning">Enviar</button>
                     </div>
                     <div class="linkPassword">
                         <a href="#" class="linkLogin" target="_blank">¿No recuerdas tu contraseña?</a>
                     </div>
-                    
+                    </form>
                 </div>
             </div>
         </div>
