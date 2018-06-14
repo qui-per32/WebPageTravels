@@ -6,18 +6,6 @@ class loginController extends Controller {
         super(req, res, next)
     }
 
-    // index() {
-    //     let travelModel = new TravelModel();
-    //     travelModel.fetchAll((data) => {
-    //         console.log(data);
-    //     });
-
-    //     this.res.render('login', {
-    //         title: 'Login',
-    //         layout: 'layout'
-    //     })
-    // }
-
     login() {
         let username = this.req.body.user;
         let pass = this.req.body.inputPass;
@@ -29,7 +17,10 @@ class loginController extends Controller {
             } else {
 
                 if (pass == info[0].password) {
-                    this.index();
+                    this.res.render('perfil', {
+                        layout: 'layout',
+                        user: username
+                    });
 
                 } else {
                     this.req.flash('info', 'La contraseña es incorrecta');

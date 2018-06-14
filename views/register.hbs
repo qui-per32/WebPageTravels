@@ -5,27 +5,43 @@
                 <div class="offset-2 col-8">
                     <h1>REGISTRO</h1>
                     <h4>¿Ya estas registrado?</h4>
-                    <form>
+                    <form method="POST" id="identicalForm" class="needs-validation" novalidate>
                         <div class="form-row">
-                            <input type="text" class="form-control border border-info inputRegister" placeholder="Usuario">
+                            <input type="text" class="form-control border border-info inputRegister" placeholder="Usuario" name="user" required>
+                            <div class="invalid-feedback alertSubmit">
+                                Insert your username.
+                            </div>
+                        </div>
+                        <div class="form-row aling-items-center alertSubmit">
+                            <input type="email" class="form-control border border-info inputRegister" placeholder="Email" name="email" required>
+                            <div class="invalid-feedback alertSubmit">
+                                Insert an email.
+                            </div>
                         </div>
                         <div class="form-row aling-items-center">
-                            <input type="email" class="form-control border border-info inputRegister" placeholder="Email">
+                            <input type="password" id="password" class="form-control border border-info inputRegister" placeholder="Contraseña" name="pass" required>
+                            <div class="invalid-feedback alertSubmit">
+                                Insert a password.
+                            </div>
                         </div>
                         <div class="form-row aling-items-center">
-                            <input type="password" class="form-control border border-info inputRegister" placeholder="Contraseña">
+                            <input type="password" id="confirmPassword" class="form-control border border-info inputRegister" placeholder="Repite la contraseña" name="repeatPass" required>
+                            <div class="invalid-feedback alertSubmit" id="advicePassDiferent">
+                                Insert a valid password.
+                            </div>
                         </div>
-                        <div class="form-row aling-items-center">
-                            <input type="password" class="form-control border border-info inputRegister" placeholder="Repite la contraseña">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="checkRegister" required>
+                            <label class="form-check-label alertSubmit" for="checkregister">
+                                Acepto los terminos y condiciones, asi como la politica de privacidad.
+                            </label>
+                            <div class="invalid-feedback alertSubmit">
+                                You must agree before submitting.
+                            </div>
                         </div>
+                        <button type="submit" class="btn-lg btn-warning">Enviar</button>
                     </form>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="checkRegister">
-                        <label class="form-check-label" for="checkregister">
-                            Acepto los terminos y condiciones, asi como la politica de privacidad.
-                        </label>
-                    </div>
-                    <button type="submit" class="btn-lg btn-warning">Enviar</button>
+                    
                 </div>
             </div>
         </div>
