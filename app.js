@@ -5,6 +5,8 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 let hbs = require('hbs');
 let hbsUtils = require('hbs-utils') (hbs);
+let ExpressSessions = require('express-session');
+let flash = require('connect-flash');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -17,6 +19,15 @@ hbsUtils.registerWatchedPartials(`${__dirname}/views/partials`);
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
+
+app.use(ExpressSessions({
+  secret: 'GeekshubsAcademy',
+  name: 'SesionGeek',
+  resave: true,
+  saveUninitialized: true
+}));
+
+app.use(flash());
 
 
 

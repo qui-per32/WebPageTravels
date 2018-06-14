@@ -71,11 +71,11 @@
 
 /*THEME HEADER*/
 
-h1 {
+.travelHeader h1 {
     color: white;
 }
 
-h2 {
+.headerText h2 {
     color: white;
 }
 
@@ -92,13 +92,14 @@ h2 {
     background-size: cover;
 }
 
+.navbarColor {
+    background-color: rgba(0, 0, 0, 0.3);
+}
 
 
 /*LAYOUT INDEX*/
 
-
 /*CARD IMAGES ON LG*/
-
 
 .card-img-top {
     width: 100%;
@@ -113,6 +114,16 @@ h2 {
 
 .card {
     border: none;
+}
+
+.text-block {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: #141939;
+    color: white;
+    word-wrap: break-word;
+    padding-left: 10px;
 }
 
 .beijing h4 {
@@ -177,7 +188,6 @@ h2 {
 
 /*CAROUSEL*/
 
-
 .textBlue {
     margin: 20px;
 }
@@ -215,7 +225,6 @@ h2 {
 }
 
 /*LAYOUT AND STYLE WHO*/
-
 
 .whoBackground {
     background: url("/images/travel_1.jpg") no-repeat center top;
@@ -262,6 +271,7 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 50px;
 }
 
 .describeButton {
@@ -297,21 +307,13 @@ iframe {
     margin-top: 30px;
 }
 
-.text-block {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    background-color: #141939;
-    color: white;
-    word-wrap: break-word;
-}
+
 
 .footer {
     background-color: #141939;
     min-height: 400px;
     max-height: 660px;
     width: 100%;
-    margin-top: 50px;
     color: white;
 }
 
@@ -325,7 +327,84 @@ iframe {
 #subscribeButton {
     text-align: center;
     width: auto;
+    padding-left: 0;
 }
+
+/*LAYOUT REGISTER*/
+
+.registerBackground {
+    background: url("/images/travel_3.jpg") no-repeat center top;
+    background-position: center center;
+    min-height: 600px;
+    width: auto;
+    background-size: cover;
+}
+
+.registerContainer {
+    background-color: rgba(249, 252, 252, 0.5);
+    min-width: 300px;
+    width: auto;
+    min-height: 500px;
+    max-height: 600px;
+    padding: 5px 0;
+}
+
+.inputRegister {
+    margin: 5px 0;
+}
+
+/*LAYOUT LOGIN*/
+
+.loginBackground {
+    background: url("/images/travel_3.jpg") no-repeat center top;
+    background-position: center center;
+    min-height: 600px;
+    width: auto;
+    background-size: cover;
+}
+
+.loginContainer {
+    background-color: rgba(249, 252, 252, 0.5);
+    min-width: 300px;
+    width: auto;
+    min-height: 500px;
+    max-height: 600px;
+    padding: 5px 0;
+}
+
+
+.titleLogin {
+    padding-top: 5px;
+}
+
+.linkLogin {
+    color: #516532;
+    text-decoration: none;
+}
+
+.linkLogin:hover {
+    color: #516532;
+    text-decoration: none;
+}
+
+.buttonLogin {
+    padding: 10px 0;
+}
+
+.linkPassword {
+    padding-bottom: 10px;
+}
+
+.errorLogin {
+    color: red;
+}
+
+.alertSubmit {
+    color: black;
+}
+
+
+
 
 /*MEDIA QUERY*/
 
@@ -333,14 +412,13 @@ iframe {
     .footer {
         margin-top: 0;
     }
-
-
     .footerMobile {
         text-align: center;
     }
     #subscribeButton {
         text-align: center;
         width: auto;
+        padding-left: 0;
     }
     .QSBox {
         background: #5DBCD2;
