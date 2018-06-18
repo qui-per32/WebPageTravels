@@ -8,6 +8,7 @@
     "start": "concurrently \"npm run start:backend\" \"npm run start:frontend\""
   },
   "dependencies": {
+    "app-root-path": "^2.0.1",
     "concurrently": "^3.5.1",
     "connect-flash": "^0.1.1",
     "cookie-parser": "~1.4.3",
@@ -24,7 +25,10 @@
     "morgan": "~1.9.0",
     "mysql": "^2.15.0",
     "mysql2": "^1.5.3",
-    "nodemon": "^1.17.5"
+    "nodemailer": "^4.6.7",
+    "nodemailer-express-handlebars": "^3.0.0",
+    "nodemon": "^1.17.5",
+    "winston": "^3.0.0"
   },
   "devDependencies": {
     "gulp-concat": "^2.6.1"

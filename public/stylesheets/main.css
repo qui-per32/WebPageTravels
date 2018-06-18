@@ -403,6 +403,23 @@ iframe {
     color: black;
 }
 
+.notFound {
+    margin: 50px 0;
+}
+
+.sizeNotFound {
+    font-size: 80px;
+}
+
+.error-details {
+    margin-bottom: 10px;
+}
+
+.buttonNotFound {
+    color: white;
+    background-color: rgb(73, 141, 230);
+}
+
 
 
 

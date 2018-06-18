@@ -7,6 +7,9 @@ let hbs = require('hbs');
 let hbsUtils = require('hbs-utils') (hbs);
 let ExpressSessions = require('express-session');
 let flash = require('connect-flash');
+// const Logger = require('./configuration/winston');
+// const winston = require('winston');
+const hbsEmail = require('nodemailer-express-handlebars');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -32,6 +35,7 @@ app.use(flash());
 
 
 app.use(logger('dev'));
+// app.use(logger('combined', {stream: winston.stream}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
@@ -44,7 +48,8 @@ app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  next(createError(404));
+  res.status(404);
+  res.render('notFound');
 });
 
 // error handler
