@@ -420,6 +420,15 @@ iframe {
     background-color: rgb(73, 141, 230);
 }
 
+.notFoundImage {
+    background: url("/images/nathan.jpg") no-repeat center top;
+    background-position: center center;
+    text-align: center;
+    max-height: 200px;
+    width: 100%;
+    background-size: cover;
+}
+
 
 
 

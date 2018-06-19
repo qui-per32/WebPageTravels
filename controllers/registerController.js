@@ -36,7 +36,7 @@ class registerController extends Controller {
  index() {
      this.res.render('register', {
          title: 'Register',
-         layout: 'layout'
+         layout: 'layout-single'
      })
  }
 }

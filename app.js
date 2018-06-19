@@ -7,7 +7,7 @@ let hbs = require('hbs');
 let hbsUtils = require('hbs-utils') (hbs);
 let ExpressSessions = require('express-session');
 let flash = require('connect-flash');
-// const Logger = require('./configuration/winston');
+const Logger = require('./configuration/winston');
 // const winston = require('winston');
 const hbsEmail = require('nodemailer-express-handlebars');
 
@@ -49,7 +49,7 @@ app.use('/users', usersRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   res.status(404);
-  res.render('notFound');
+  res.render('notFound',{layout:'layout-single'});
 });
 
 // error handler
