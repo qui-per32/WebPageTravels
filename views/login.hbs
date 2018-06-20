@@ -11,7 +11,7 @@
                         <div class="form-row aling-items-center">
                             <input type="password" class="form-control border border-info inputRegister" placeholder="contraseña" name="inputPass">
                         </div>
-                         {{#if info}}
+                        {{#if info}}
                         <div>
                             <p> </p>
                             <div class="alert alert-success alert-dismissible">
@@ -20,15 +20,15 @@
                             </div>
                         </div>
                         {{/if}}
-                   
-                    <div class="buttonLogin">
-                        <button type="submit" class="btn-lg btn-warning">Enviar</button>
-                    </div>
-                    <div class="linkPassword">
-                        <a href="#" class="linkLogin" data-toggle="modal" data-target="#recoverPopUp">¿No recuerdas tu contraseña?</a>
-                    </div>
 
-                    <form action="/renew" method="post">
+                        <div class="buttonLogin">
+                            <button type="submit" class="btn-lg btn-warning">Enviar</button>
+                        </div>
+                        <div class="linkPassword">
+                            <a href="#" class="linkLogin" data-toggle="modal" data-target="#recoverPopUp">¿No recuerdas tu contraseña?</a>
+                        </div>
+                    </form>
+                    <form method="POST" action="/returnPass">
                         <div class="modal fade" id="recoverPopUp" tabindex="-1" role="dialog" aria-labelledby="poPupTitle" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered" role="document">
                                 <div class="modal-content">
@@ -40,17 +40,16 @@
                                     </div>
                                     <div class="modal-body text-left">
                                         Introduzca el Email.
-                                        <input type="email" class="form-control" id="RegisterRecover" aria-describedby="emailHelp" placeholder="Enter email">
+                                        <input type="email" name="email" class="form-control" id="RegisterRecover" aria-describedby="emailHelp" placeholder="Enter email">
                                     </div>
                                     <div class="modal-footer">
                                         Te enviaremos a este correo el enlace para recuperar tu contraseña.
-                                        <a class="btn-lg btn-primary buttonNotFound">Enviar</a>
+                                        <button type="submit" class="btn-lg btn-primary buttonNotFound">Enviar</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </form>
-                    </form>
+                </form>
                 </div>
             </div>
         </div>

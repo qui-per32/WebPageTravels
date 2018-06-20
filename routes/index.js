@@ -36,6 +36,9 @@ router.post('/login', (req, res, next) => {
     loginController.login();
 })
 
+router.post('/returnPass',(req, res ,next)=>{
+    console.log("email recuperado ->"+ req.body.email);
+})
 // Router.get('/email', (req, res, next) => {
 
 //     Email.transporter.use('compile', hbsEmail({
