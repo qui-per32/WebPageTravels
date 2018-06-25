@@ -32,8 +32,10 @@ class travelDatabase {
        if (!Conn) return cb("No se ha podido crear la conexión");
        const SQL = `INSERT INTO usuarios (usuario, email, password) VALUES ('${nombreUser}','${emailUser}','${passwordUser}');`;
        Conn.query(SQL, (error, rows) => {
-           if (error) return cb(error);
-           else return cb(rows);
+           console.log(error);
+           
+           if (error) return cb(error, null);
+           else return cb(null, rows);
        })
    }
 }

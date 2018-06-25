@@ -60,7 +60,7 @@ class loginController extends Controller {
             }else{
                     let emailForNewPass = new EmailForNewPass();
                     emailForNewPass.request(emailDestino);
-                    this.res.redirect('/');
+                    this.res.redirect('/login');
                 }
         })
     }

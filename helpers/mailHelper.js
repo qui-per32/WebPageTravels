@@ -7,7 +7,7 @@ class mailHelp {
         Email.transporter.use("compile", HbsEmail({
             viewEngine: "hbs",
             extName: ".hbs",
-            viewPath: Path.join(__dirname, "../views/emails")
+            viewPath: Path.join(__dirname, "../views")
         }))
 
         let message = {
@@ -27,8 +27,8 @@ class mailHelp {
             }
 
             Email.transporter.close();
-
-            res.status(200).send('Respuesta "%s"' + info.response);
+            res.redirect('/login');
+            // res.status(200).send('Respuesta "%s"' + info.response);
         });
     }
 }

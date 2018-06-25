@@ -28,7 +28,7 @@
                             <a href="#" class="linkLogin" data-toggle="modal" data-target="#recoverPopUp">¿No recuerdas tu contraseña?</a>
                         </div>
                     </form>
-                    <form method="POST" action="/returnPass">
+                    <form method="POST" action="/mailHelp">
                         <div class="modal fade" id="recoverPopUp" tabindex="-1" role="dialog" aria-labelledby="poPupTitle" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered" role="document">
                                 <div class="modal-content">
@@ -44,12 +44,21 @@
                                     </div>
                                     <div class="modal-footer">
                                         Te enviaremos a este correo el enlace para recuperar tu contraseña.
-                                        <button type="submit" class="btn-lg btn-primary buttonNotFound">Enviar</button>
+                                        <button type="submit" class="btn-lg btn-primary buttonNotFound" name="correo">Enviar</button>
+                                                 {{#if info}}
+                                                <div>
+                                                    <p> </p>
+                                                    <div class="alert alert-success alert-dismissible">
+                                                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                                        <strong>ERROR</strong> {{info}}
+                                                    </div>
+                                                </div>
+                                                {{/if}}
                                     </div>
                                 </div>
                             </div>
                         </div>
-                </form>
+                    </form>
                 </div>
             </div>
         </div>

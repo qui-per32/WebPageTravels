@@ -21,14 +21,14 @@ class registerController extends Controller {
                 this.res.redirect('/register');
             }
         });
-        travelModel.insertUser(username, email, pass, (info) => {
-            // if (info.length === 1) {
-            //     this.req.flash('info', 'el usuario ya existe');
-            //     this.index();
-            // } else {
+        travelModel.insertUser(username, email, pass, (error,info) => {
+            if (error) {
+                this.req.flash('info', 'el usuario o  ya existe');
+                this.index();
+            } else {
                 this.res.redirect('/login');
 
-            // }
+            }
 
         })
     }
