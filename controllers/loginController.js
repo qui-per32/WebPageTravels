@@ -1,6 +1,6 @@
 const Controller = require('./controller');
 const TravelModel = require('../models/travelModel');
-const EmailForNewPass = require("../helpers/mailHelper")
+const EmailForNewPass = require("../service/emailService")
 
 class loginController extends Controller {
     constructor(req, res, next) {
@@ -18,8 +18,8 @@ class loginController extends Controller {
             } else {
 
                 if (pass == info[0].password) {
-                    this.res.render('perfil', {
-                        layout: 'layout',
+                    this.res.render('index', {
+                        layout: 'layout-single',
                         user: username
                     });
 
@@ -34,6 +34,7 @@ class loginController extends Controller {
 
     index() {
         let info = this.req.flash('info');
+
         if (info == "") {
             this.res.render('login', {
                 title: 'Login',
@@ -50,17 +51,17 @@ class loginController extends Controller {
     }
 
     newPass()  {
-        let emailDestino = this.req.body.correo;
+        let emailDestino = this.req.body.email;
         let travelModel = new TravelModel();
         travelModel.findEmail(emailDestino, (data) => {
 
             if (data.length === 0) {
-                this.req.flash("data", "El email no existe");
-                return
+                this.req.flash('info', 'El email no existe');
+                this.index();
             }else{
                     let emailForNewPass = new EmailForNewPass();
                     emailForNewPass.request(emailDestino);
-                    this.res.redirect('/login');
+                    this.res.redirect('/');
                 }
         })
     }

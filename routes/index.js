@@ -4,7 +4,10 @@ let HomeController = require('../controllers/homeController');
 let RegisterController = require('../controllers/registerController');
 let LoginController = require('../controllers/loginController');
 let AdminController = require('../controllers/adminController');
-const Email = require('../configuration/emailConf');
+let NewPassController = require('../controllers/newPassController');
+const IdentificationService = require('../service/identService');
+const SecureService = require('../service/secureService');
+const Email = require('../config/emailConf');
 const Path = require('path');
 const hbsEmail = require('nodemailer-express-handlebars');
 
@@ -34,16 +37,32 @@ router.post('/login', (req, res, next) => {
     loginController.login();
 })
 
-router.post('/mailHelp',(req, res ,next)=>{
+router.post('/renew',(req, res ,next)=>{
     let loginController = new LoginController(req, res, next);
     loginController.newPass();
-    console.log("email recuperado ->"+ req.body.email);
 })
 
 router.get('/admin', (req, res, next) => {
     let adminController = new AdminController(req, res, next);
     adminController.index();
 })
+
+router.get('/newPass', (req, res, next) => {
+    let newPassController = new NewPassController(req, res, next);
+    newPassController.index();
+})
+
+router.post('/newPass', (req, res, next) => {
+    let newPassController = new NewPassController(req, res, next);
+    newPassController.index();
+})
+
+// Router.get('/hash/:hash', (req, res, next) => {
+//     console.log('entrado en regeneration ->' + req.params.hash);
+
+//     res.send(200);
+
+// });
 
 // Router.get('/email', (req, res, next) => {
 

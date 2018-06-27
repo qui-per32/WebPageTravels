@@ -7,7 +7,7 @@ let hbs = require('hbs');
 let hbsUtils = require('hbs-utils') (hbs);
 let ExpressSessions = require('express-session');
 let flash = require('connect-flash');
-const Logger = require('./configuration/winston');
+const Logger = require('./config/winston');
 const winston = require('winston');
 const hbsEmail = require('nodemailer-express-handlebars');
 

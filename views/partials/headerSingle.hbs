@@ -17,12 +17,15 @@
                         <a class="nav-link" href="/#destination">Destinos</a>
                         <a class="nav-link" href="/#explication">Quiénes somos</a>
                         <a class="nav-link" href="/#formMap">Dónde estamos</a>
+                        {{#unless user}}
                         <a class="nav-link" href="/register">Registrate</a>
                         <a class="nav-link" href="/login">Login</a>
+                        {{/unless}}
                     </nav>
 
                 </div>
                 <div class="col-3 d-none d-lg-block">
+                    {{#unless user}}
                     <div class="row socialMedia">
                         <div class="col-2">
                             <a href="https://www.facebook.com/" target="_blank">
@@ -49,6 +52,22 @@
                                 <img class="youtube image-fluid" src="/images/youtube.png" alt="youtube"> </a>
                         </div>
                     </div>
+                    {{/unless}} 
+                    {{#if user}}
+                    <div class="container-fluid loginUser">
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">
+                                    {{user}}
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="#">Action</a>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                                </div>
+                        </div>
+                    </div>
+                    {{/if}}
                 </div>
 
             </div>
@@ -66,17 +85,24 @@
                             <li class="nav-item active">
                                 <a class="nav-link font-italic" href="/#explicationMobile">Quiénes somos</a>
                             </li>
+                             {{#unless user}}
                             <li class="nav-item active">
                                 <a class="nav-link font-italic" href="/register">Registrate</a>
                             </li>
                             <li class="nav-item active">
                                 <a class="nav-link font-italic" href="/login">Login</a>
                             </li>
+                            {{/unless}}
+                            {{#if user}}
+                            <li class="nav-item active">
+                                <a class="nav-link font-italic" href="#">{{user}}</a>
+                            </li>
+                            {{/if}}
                         </ul>
                     </div>
                 </nav>
             </div>
-           
+
         </div>
     </div>
 

@@ -1,5 +1,9 @@
 const Controller = require('./controller');
 const TravelModel = require('../models/travelModel');
+const IdentService = require('../service/identService');
+const EmailService = require('../service/emailService');
+const RegisterService = require('../service/secureService');
+
 
 class registerController extends Controller {
     constructor(req, res, next) {
@@ -10,35 +14,48 @@ class registerController extends Controller {
         let username = this.req.body.user;
         let email = this.req.body.email;
         let pass = this.req.body.pass;
+        let registerData = {...this.req.body}
         let travelModel = new TravelModel();
         travelModel.findUser(username, (info) => {
-            if (info[0] !== null) {
-                if (info[0].usuario == username) {
-                    this.req.flash('info', 'El nombre de usuario ya existe');
-                    this.index();
-                }
+            
+            if (typeof (info[0]) !== 'undefined') {
+                if (info[0].usuario === username && info[0].email === email) {
+                    this.req.flash('info', 'El usuario o email esta utilizado');
+                    this.res.redirect('/register');
+                    return;
+                } 
             } else {
-                this.res.redirect('/register');
+                let identService = new IdentService();;
+                registerData.hash = identService.getUUIDD(3, 4);
+                let registerService = new RegisterService();
+                registerData.pass = registerService.encryptPass(registerData.pass);
+                let emailService = new EmailService();
+                emailService.sendRegisterEmail(registerData);
+                travelModel.insertUser(registerData, console.log );
+                this.res.redirect('/');
             }
+
         });
-        travelModel.insertUser(username, email, pass, (error,info) => {
-            if (error) {
-                this.req.flash('info', 'el usuario o  ya existe');
-                this.index();
-            } else {
-                this.res.redirect('/login');
 
-            }
-
-        })
     }
 
- index() {
-     this.res.render('register', {
-         title: 'Register',
-         layout: 'layout-single'
-     })
- }
+    index() {
+        let info = this.req.flash('info');
+
+        if (info == "") {
+            this.res.render('register', {
+                title: 'Register',
+                layout: 'layout-single'
+            });
+        } else {
+            this.res.render('register', {
+                title: 'Register',
+                layout: 'layout-single',
+                info: info
+            });
+            info = "";
+        }
+    }
 }
 
 module.exports = registerController;
