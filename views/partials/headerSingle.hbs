@@ -55,15 +55,14 @@
                     {{/unless}} 
                     {{#if user}}
                     <div class="container-fluid loginUser">
-                            <div class="dropdown">
-                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                            <div class="dropdown d-flex justify-content-end">
+                                <button class="btn btn-secondary dropdown-toggle buttonDropwn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
                                     aria-expanded="false">
                                     {{user}}
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
+                                    <a class="dropdown-item" href="#">Profile</a>
+                                    <a class="dropdown-item" href="/closeSession">Log out</a>
                                 </div>
                         </div>
                     </div>
@@ -79,13 +78,14 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarHeader">
                         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                             {{#unless user}}
                             <li class="nav-item active justify-content-center">
                                 <a class="nav-link font-italic" href="/#carouselFligths">Destinos</a>
                             </li>
                             <li class="nav-item active">
                                 <a class="nav-link font-italic" href="/#explicationMobile">Quiénes somos</a>
                             </li>
-                             {{#unless user}}
+                             
                             <li class="nav-item active">
                                 <a class="nav-link font-italic" href="/register">Registrate</a>
                             </li>
@@ -96,6 +96,12 @@
                             {{#if user}}
                             <li class="nav-item active">
                                 <a class="nav-link font-italic" href="#">{{user}}</a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link font-italic" href="#">Profile</a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link font-italic" href="/closeSession">Log out</a>
                             </li>
                             {{/if}}
                         </ul>

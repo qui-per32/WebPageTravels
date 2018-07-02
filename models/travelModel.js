@@ -27,14 +27,20 @@ class travelDatabase {
             else return cb(rows);
         })
     }
+    getUserByEmailOrUsername(username, email, cb) {
+        if (!Conn) return cb("No se ha podido crear la conexión");
+        const SQL = `SELECT * FROM usuarios where usuario ='${username}' or email ='${email}';`;
+        Conn.query(SQL, (error, rows) => {
+            if (error) return cb(error);
+            else return cb(rows);
+        })
+    }
 
    insertUser(userData, cb) {
        let {user,email,hash,pass} = userData;
        if (!Conn) return cb("No se ha podido crear la conexión");
        const SQL = `INSERT INTO usuarios (usuario, email, password, hash) VALUES ('${user}','${email}','${pass}', '${hash}');`;
-       Conn.query(SQL, (error, rows) => {
-        //    console.log(error);
-           
+       Conn.query(SQL, (error, rows) => {  
            if (typeof cb === 'function'){
                if (error) return cb(error);
                else return cb(rows);

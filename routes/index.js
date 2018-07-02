@@ -5,6 +5,7 @@ let RegisterController = require('../controllers/registerController');
 let LoginController = require('../controllers/loginController');
 let AdminController = require('../controllers/adminController');
 let NewPassController = require('../controllers/newPassController');
+const SessionController = require('../controllers/sessionController');
 const IdentificationService = require('../service/identService');
 const SecureService = require('../service/secureService');
 const Email = require('../config/emailConf');
@@ -56,6 +57,12 @@ router.post('/newPass', (req, res, next) => {
     let newPassController = new NewPassController(req, res, next);
     newPassController.index();
 })
+
+router.get('/closeSession', (req, res, next) => {
+    let sessionsController = new SessionController(req, res, next);
+    sessionsController.closeSession();
+    res.redirect('/');
+});
 
 // Router.get('/hash/:hash', (req, res, next) => {
 //     console.log('entrado en regeneration ->' + req.params.hash);

@@ -16,10 +16,11 @@ class registerController extends Controller {
         let pass = this.req.body.pass;
         let registerData = {...this.req.body}
         let travelModel = new TravelModel();
-        travelModel.findUser(username, (info) => {
-            
+        travelModel.getUserByEmailOrUsername(username, email, (info) => {
+
             if (typeof (info[0]) !== 'undefined') {
-                if (info[0].usuario === username && info[0].email === email) {
+                
+                if (info[0].usuario === username || info[0].email === email) {
                     this.req.flash('info', 'El usuario o email esta utilizado');
                     this.res.redirect('/register');
                     return;
