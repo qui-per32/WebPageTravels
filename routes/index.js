@@ -1,10 +1,11 @@
 var express = require('express');
 var router = express.Router();
-let HomeController = require('../controllers/homeController');
-let RegisterController = require('../controllers/registerController');
-let LoginController = require('../controllers/loginController');
-let AdminController = require('../controllers/adminController');
-let NewPassController = require('../controllers/newPassController');
+const HomeController = require('../controllers/homeController');
+const RegisterController = require('../controllers/registerController');
+const LoginController = require('../controllers/loginController');
+const AdminController = require('../controllers/adminController');
+const NewPassController = require('../controllers/newPassController');
+const ActivateUserController = require('../controllers/activateUserController');
 const SessionController = require('../controllers/sessionController');
 const IdentificationService = require('../service/identService');
 const SecureService = require('../service/secureService');
@@ -64,17 +65,10 @@ router.get('/closeSession', (req, res, next) => {
     res.redirect('/');
 });
 
-// Router.get('/hash/:hash', (req, res, next) => {
-//     console.log('entrado en regeneration ->' + req.params.hash);
-
-//     res.send(200);
-
-// });
-
-// Router.get('/email', (req, res, next) => {
-
-    
-// });
+router.get('/activate/:hash', (req, res, next) => {
+    let activateUserController = new ActivateUserController(req, res, next);
+    activateUserController.index();
+});
 
 
 module.exports = router;

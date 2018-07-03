@@ -4,6 +4,9 @@
     font-family: 'Cabin', sans-serif;
     font-size: 20px;
 }
+a {
+    color: black;
+}
 
 /*LAYOUT HEADER*/
 

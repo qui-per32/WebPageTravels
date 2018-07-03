@@ -1,6 +1,6 @@
 const Conn = require("../helpers/mysqlconnection");
 
-class travelDatabase {
+class travelModel {
     // getAll(cb) {
     //     if (!Conn) return cb("No se ha creado la conexión");
     //     const SQL = "SELECT * FROM usuarios;";
@@ -21,7 +21,7 @@ class travelDatabase {
 
     findEmail(correo, cb) {
         if (!Conn) return cb("No se ha podido crear la conexión");
-        const SQL = "SELECT * FROM usuarios WHERE email LIKE '%" + correo + "%';";
+        const SQL = `SELECT * FROM usuarios WHERE email LIKE '%" + '${correo}' + "%';`;
         Conn.query(SQL, (error, rows) => {
             if (error) return cb(error);
             else return cb(rows);
@@ -35,6 +35,28 @@ class travelDatabase {
             else return cb(rows);
         })
     }
+
+    getUserByHash(hash) {
+        return new Promise((resolve, reject) => {
+            if (!Conn) return reject('No existe conexión');
+            let SQL = `SELECT * FROM usuarios WHERE hash = '${hash}';`;
+            Conn.query(SQL, (error, rows) => {
+                if (error) return reject(error);
+                else return resolve(rows);
+            })
+        })
+    };
+
+    setActiveUser(hash) {
+        return new Promise((resolve, reject) => {
+            if (!Conn) return reject('No existe conexión');
+            let SQL = `UPDATE usuarios set active=1 , hash='' where hash='${hash}';`;
+            Conn.query(SQL, (error, rows) => {
+                if (error) return reject(error);
+                else return resolve(rows);
+            })
+        })
+    };
 
    insertUser(userData, cb) {
        let {user,email,hash,pass} = userData;
@@ -58,4 +80,4 @@ class travelDatabase {
    }
 }
 
-module.exports = travelDatabase;
+module.exports = travelModel;
