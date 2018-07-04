@@ -7,8 +7,7 @@ const AdminController = require('../controllers/adminController');
 const NewPassController = require('../controllers/newPassController');
 const ActivateUserController = require('../controllers/activateUserController');
 const SessionController = require('../controllers/sessionController');
-const IdentificationService = require('../service/identService');
-const SecureService = require('../service/secureService');
+const RecoverController = require('../controllers/recoverController');
 const Email = require('../config/emailConf');
 const Path = require('path');
 const hbsEmail = require('nodemailer-express-handlebars');
@@ -39,10 +38,6 @@ router.post('/login', (req, res, next) => {
     loginController.login();
 })
 
-router.post('/renew',(req, res ,next)=>{
-    let loginController = new LoginController(req, res, next);
-    loginController.newPass();
-})
 
 router.get('/admin', (req, res, next) => {
     let adminController = new AdminController(req, res, next);
@@ -69,6 +64,26 @@ router.get('/activate/:hash', (req, res, next) => {
     let activateUserController = new ActivateUserController(req, res, next);
     activateUserController.index();
 });
+
+router.get('/recover', (req, res, next) => {
+    let recoverController = new RecoverController(req, res, next);
+    recoverController.index();
+});
+
+router.post('/recover', (req, res, next) => {
+    let recoverController = new RecoverController(req, res, next);
+    recoverController.recover();
+});
+
+router.get('/recover/pass/:hash', (req, res, next) => {
+    let recoverController = new RecoverController(req, res, next);
+    recoverController.formActivate();
+});
+
+router.post('/recover/pass/:hash', (req, res, next) => {
+    let recoverController = new RecoverController(req, res, next);
+    recoverController.activate();
+})
 
 
 module.exports = router;

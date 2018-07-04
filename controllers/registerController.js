@@ -16,15 +16,15 @@ class registerController extends Controller {
         let pass = this.req.body.pass;
         let registerData = {...this.req.body}
         let travelModel = new TravelModel();
-        travelModel.getUserByEmailOrUsername(username, email, (info) => {
-
+        travelModel.getUserByEmailOrUsername(username, email)
+        .then((info)=>{
             if (typeof (info[0]) !== 'undefined') {
-                
+
                 if (info[0].usuario === username || info[0].email === email) {
                     this.req.flash('info', 'El usuario o email esta utilizado');
                     this.res.redirect('/register');
                     return;
-                } 
+                }
             } else {
                 let identService = new IdentService();;
                 registerData.hash = identService.getUUIDD(3, 4);
@@ -32,10 +32,9 @@ class registerController extends Controller {
                 registerData.pass = registerService.encryptPass(registerData.pass);
                 let emailService = new EmailService();
                 emailService.sendRegisterEmail(registerData);
-                travelModel.insertUser(registerData, console.log );
+                travelModel.insertUser(registerData, console.log);
                 this.res.redirect('/');
             }
-
         });
 
     }
