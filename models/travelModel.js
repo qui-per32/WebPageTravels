@@ -33,7 +33,7 @@ class travelModel {
         })
         
     }
-    getUserByEmailOrUsername(username, email) {
+    getUserByEmailOrUsername(email, username) {
         return new Promise((resolve,reject)=>{
              if (!Conn) return reject("No se ha podido crear la conexión");
              const SQL = `SELECT * FROM usuarios where usuario ='${username}' or email ='${email}';`;
@@ -86,7 +86,7 @@ class travelModel {
        return new Promise((resolve, reject) => {
            console.log(user.email);
            if (!Conn) return reject("No existe conexión");
-           let SQL = `UPDATE usuarios set active=0, hash='${user.hash}', pass='' where email='${user.email}';`;
+           let SQL = `UPDATE usuarios set active=0, hash='${user.hash}', password='' where email='${user.email}';`;
            Conn.query(SQL, (error, rows) => {
                if (error) return reject(error);
                else return resolve(rows);
@@ -97,7 +97,7 @@ class travelModel {
    setActiveRecover(hash, pass) {
        return new Promise((resolve, reject) => {
            if (!Conn) return reject('No existe conexión');
-           let SQL = `UPDATE usuarios set active=1 , pass='${pass}', hash='' where hash='${hash}';`;
+           let SQL = `UPDATE usuarios set active=1 , password='${pass}', hash='' where hash='${hash}';`;
            Conn.query(SQL, (error, rows) => {
                if (error) return reject(error);
                else return resolve(rows);

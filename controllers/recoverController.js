@@ -9,18 +9,20 @@ class recoverController extends Controller {
     }
 
     recover() {
-        let email = this.req.body.email
+        let email = this.req.body.email;
         let travelModel = new TravelModel();
         let identService = new IdentService();
-        travelModel.getUserByEmailOrUsername(email)
+
+        travelModel.getUserByEmailOrUsername(email, null)
             .then((data) => {
-                console.log(JSON.stringify(data));
-                
+                console.log(data);
+
+
                 data[0].hash = identService.getUUIDD(3, 3);
                 travelModel.setDesactivateUser(data[0])
-                    .then((data) => {
+                    .then((result) => {
                         let emailService = new EmailService();
-                        emailService.sendRecoverEmail(data[0]);
+                        emailService.sendReactivateEmail(data[0]);
                         this.res.redirect('/login');
                     })
                     .catch(error => {
@@ -35,13 +37,16 @@ class recoverController extends Controller {
         travelModel.getUserByHash(this.req.params.hash)
             .then((user) => {
 
-                console.log(JSON.stringify(user));
                 if (user.length === 0) {
-                    this.req.flash.error = "El hash no existe";
-                    this.res.redirect('/recover');
+                    this.res.render('recover', {
+                        title: 'Recuperar pass',
+                        layout: 'layout-single',
+                        error: 'El link ha caducado'
+                    });
                 } else {
-                    this.res.render('recoverform', {
-                        title: 'Recuperar pass'
+                    this.res.render('recover', {
+                        title: 'Recuperar pass',
+                        layout: 'layout-single'
                     });
                 }
             })
@@ -52,15 +57,17 @@ class recoverController extends Controller {
     activate() {
         let secureService = new SecureService();
         let hash = this.req.params.hash;
-        let pass = secureService.encryptPass(this.req.body.pass);
+        let pass = secureService.encryptPass(this.req.body.renewNewPass);
+
         let travelModel = new TravelModel();
         travelModel.setActiveRecover(hash, pass)
             .then((user) => {
-                this.res.redirect('/login');
-            })
+                    this.res.redirect('/login');
+                
 
+            })
             .catch((error) => {
-                console.error(error);
+                this.req.flash.error;
             })
 
     }
@@ -72,15 +79,18 @@ class recoverController extends Controller {
         if (this.req.flash.error) {
             this.res.render('recover', {
                 title: "Recuperar contraseña",
+                layout:'layout-single',
                 message: this.req.flash.error
             })
         } else {
             this.res.render('recover', {
                 title: "Recuperar contraseña.",
+                layout: 'layout-single',
                 message: null
             })
         }
     };
+
 
 
 }

@@ -3,18 +3,28 @@
         <div class="offset-3 col-6">
             <div class="row loginContainer text-center d-flex align-items-center">
                 <div class="offset-2 col-8">
+                    {{#if error}}
+                    <h1>UPSS {{error}}</h1>
+                    {{/if}} {{#unless error}}
                     <h1 class="titleLogin">Nueva Contraseña</h1>
-                    <form method="POST">
+                    <form method="POST" class="needs-validation" novalidate>
                         <div class="form-row">
-                            <input type="password" class="form-control border border-info inputRegister" placeholder="nueva contraseña" name="renewpass">
+                            <input id="password" type="password" class="form-control border border-info inputRegister" placeholder="nueva contraseña"
+                                name="renewpass" required>
                         </div>
                         <div class="form-row aling-items-center">
-                            <input type="password" class="form-control border border-info inputRegister" placeholder="repita contraseña" name="renewNewPass">
+                            <input id="confirmPassword" type="password" class="form-control border border-info inputRegister" placeholder="repita contraseña"
+                                name="renewNewPass" required>
+                            <div class="invalid-feedback alertSubmit" id="advicePassDiferent">
+                                Insert a valid password.
+                            </div>
+                           
                         </div>
                         <div class="buttonLogin">
                             <button type="submit" class="btn-lg btn-warning">Enviar</button>
                         </div>
                     </form>
+                    {{/unless}}
                 </div>
             </div>
         </div>

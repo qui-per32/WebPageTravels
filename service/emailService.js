@@ -16,7 +16,7 @@ class EmailService {
             subject: 'Registro',
             template: 'emailAct',
             context: {
-                username: info.username,
+                user: info.usuario,
                 hash: info.hash
             }
         }
@@ -30,19 +30,19 @@ class EmailService {
         })
     }
 
-        sendReactivateEmail(info) {
+        sendReactivateEmail(data) {
             Email.transporter.use('compile', Hbs({
                 viewEngine: 'hbs',
                 extName: '.hbs',
                 viewPath: Path.join(__dirname, '../views/email-templates')
             }));
             let message = {
-                to: info.email,
+                to: data.email,
                 subject: 'activacion',
                 template: 'reactivateUser',
                 context: {
-                    username: info.username,
-                    hash: info.hash
+                    user: data.usuario,
+                    hash: data.hash
                 }
             }
             Email.transporter.sendMail(message, (error, info) => {
