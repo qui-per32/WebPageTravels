@@ -8,6 +8,9 @@ const NewPassController = require('../controllers/newPassController');
 const ActivateUserController = require('../controllers/activateUserController');
 const SessionController = require('../controllers/sessionController');
 const RecoverController = require('../controllers/recoverController');
+const UploadService = require('../service/uploadService');
+let uploadService = new UploadService();
+let upload = uploadService.up();
 const Email = require('../config/emailConf');
 const Path = require('path');
 const hbsEmail = require('nodemailer-express-handlebars');
@@ -83,6 +86,13 @@ router.get('/recover/pass/:hash', (req, res, next) => {
 router.post('/recover/pass/:hash', (req, res, next) => {
     let recoverController = new RecoverController(req, res, next);
     recoverController.activate();
+});
+
+router.post('/add/travel', upload.single('file'), (req, res, next) => {
+    res.render('addTravel', {
+        title: 'AddTravel',
+        layout: 'layout-single'
+    })
 })
 
 

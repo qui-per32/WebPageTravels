@@ -6,13 +6,27 @@ class adminController extends Controller {
         super(req, res, next)
     }
 
-     index() {
+    getTravels() {
+
+    }
+
+    index() {
+
+        let travelModel = new TravelModel();
+        travelModel.showTravels()
+        .then(((data)=>{
+            console.log(JSON.stringify(data));
              this.res.render('admin', {
                  title: 'admin',
-                 layout: 'layout-single'
+                 layout: 'layout-single',
+                 data: data
              })
-     }
-    
+        }))
+
+       
+        
+    }
+
 }
 
 module.exports = adminController;

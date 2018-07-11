@@ -16,7 +16,8 @@
                                 <tr>
                                     <th scope="col">Id</th>
                                     <th scope="col">Viajes</th>
-                                    <th scope="col">Fechas</th>
+                                    {{!--
+                                    <th scope="col">Fechas</th> --}}
                                     <th scope="col">Descripción</th>
                                     <th scope="col">Imagen</th>
                                     <th scope="col">Precio</th>
@@ -24,11 +25,14 @@
                                     <th scope="col">Eliminar</th>
                                 </tr>
                             </thead>
+
                             <tbody>
+                                {{#each data}}
                                 <tr>
                                     <td scope="row">{{id}}</td>
                                     <td>{{travel}}</td>
-                                    <td>{{dates}}</td>
+                                    {{!--
+                                    <td>{{dates}}</td> --}}
                                     <td>{{description}}</td>
                                     <td>
                                         <button type="button" class="btn btn-primary btn-sm">
@@ -49,8 +53,14 @@
                                         </button>
                                     </td>
                                 </tr>
+                                {{/each}}
                             </tbody>
+
                         </table>
+                        <form action="/add/travel" method="post">
+                        <button class="btn btn-primary btn-lg text-uppercase describeButton">añadir
+                        </button>
+                        </form>
                     </div>
                 </div>
             </div>
