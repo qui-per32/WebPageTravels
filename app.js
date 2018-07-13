@@ -7,6 +7,7 @@ let hbs = require('hbs');
 let hbsUtils = require('hbs-utils') (hbs);
 let ExpressSessions = require('express-session');
 let flash = require('connect-flash');
+let paginate = require('express-paginate');
 const Logger = require('./config/winston');
 const winston = require('winston');
 const hbsEmail = require('nodemailer-express-handlebars');
@@ -16,13 +17,15 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
+
+app.use(paginate.middleware(2, 6));
 // view engine partials
 hbsUtils.registerPartials(`${__dirname}/views/partials`);
 hbsUtils.registerWatchedPartials(`${__dirname}/views/partials`);
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
-
+require('./helpers/hbs')(hbs);
 
 app.use(ExpressSessions({
   secret: 'GeekshubsAcademy',

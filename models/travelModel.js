@@ -115,9 +115,24 @@ class travelModel {
                     
                     return resolve(rows);}
             })
-       })
-      
-   }
+       })   
+    }
+     addTravels(travel,description,price,url) {
+         console.log("entro en add");
+         
+         return new Promise((resolve, reject) => {
+             if (!Conn) return reject("No se ha podido crear la conexión");
+             const SQL = `INSERT INTO travels (travel, description, price, url) VALUES ('${travel}','${description}','${price}', '${url}');`;
+             Conn.query(SQL, (error, rows) => {
+                 if (error) return reject(error);
+                 else {
+                     console.log(rows);
+                     
+                     return resolve(rows);
+                 }
+             })
+         })
+     }
 }
 
 module.exports = travelModel;

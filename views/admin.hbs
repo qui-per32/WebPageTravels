@@ -31,19 +31,15 @@
                                 <tr>
                                     <td scope="row">{{id}}</td>
                                     <td>{{travel}}</td>
-                                    {{!--
-                                    <td>{{dates}}</td> --}}
                                     <td>{{description}}</td>
                                     <td>
-                                        <button type="button" class="btn btn-primary btn-sm">
-                                            <i class="fa fa-folder"></i>
-                                        </button>
+                                        <img src="{{url}}" width="65px" height="65px">
                                     </td>
                                     <td>{{price}}$</td>
                                     <td>
                                         <div class="checkbox">
                                             <label>
-                                                <input type="checkbox" value="" checked="{{activate}}">
+                                                <input type="checkbox" {{#if active}} checked {{/if}}>
                                             </label>
                                         </div>
                                     </td>

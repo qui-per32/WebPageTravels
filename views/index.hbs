@@ -63,9 +63,31 @@
                 </div>
 
             </div>
-
+            
         </div>
-
+        <nav arial-label="Page navigation example">
+            <ul class="pagination">
+                <!--enlace anterior -->
+                {{#with paginate}} {{#if hasPreviousPages}}
+                <li class="page-item prev">
+                    <a class="page-link" href="{{prev_link this}}">Anterior </a>
+                </li>
+                {{/if}} {{/with}}
+                <!-- paginas de 1 a n --->
+                {{#each links}}
+                <li class="page-item {{is_active @index  ../currentPage}}">
+                    <a class="page-link" href="{{url}}">{{number}}</a>
+                </li>
+                {{/each}}
+        
+                <!--enlace siguiente -->
+                {{#with paginate}} {{#has_next_links ../pageCount this}}
+                <li class="page-item next">
+                    <a class="page-link" href="{{next_link ../this}}">Siguiente </a>
+                </li>
+                {{/has_next_links}} {{/with}}
+            </ul>
+        </nav>
     </div>
 
 </div>

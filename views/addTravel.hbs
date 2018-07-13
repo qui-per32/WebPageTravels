@@ -3,7 +3,7 @@
         <div class="offset-3 col-6">
             <div class="row loginContainer text-center d-flex align-items-center">
                 <div class="offset-2 col-8">
-                    <form class="needs-validation" enctype="multipart/form-data" method="post" role="form" action="add/travels" novalidate>
+                    <form class="needs-validation" enctype="multipart/form-data" method="post" role="form" action="/add" novalidate>
                         <div class="form-row align-items-center">
 
                             <input type="text" class="form-control inputRegister" id="validationCustom01" name="travel" placeholder="Viajes" required>
@@ -16,11 +16,11 @@
                         </div>
                         <div class="form-row align-items-center">
 
-                            <input type="text" name="ahorro" class="form-control inputRegister" id="exampleInputPassword1" placeholder="Ahorro" required>
+                            <input type="text" name="description" class="form-control inputRegister" id="exampleInputPassword1" placeholder="description" required>
 
                         </div>
                         <div class="form-row align-items-center custom-file text-left inputRegister">
-                            <input type="file" class="form-control custom-file-input" id="validatedCustomFile" required>
+                            <input type="file" class="form-control custom-file-input" id="validatedCustomFile" name="file" required>
                             <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
                             <div class="invalid-feedback">Example invalid custom file feedback</div>
                         </div>

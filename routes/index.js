@@ -95,5 +95,12 @@ router.post('/add/travel', (req, res, next) => {
     })
 })
 
+router.post('/add', upload.single('file'),(req,res,next)=>{
+    console.log(req.file);
+    // res.json(req.file.path);
+    let adminController = new AdminController(req,res,next);
+    adminController.addTravels();
+})
+
 
 module.exports = router;
