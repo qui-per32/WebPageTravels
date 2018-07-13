@@ -4,6 +4,7 @@
     font-family: 'Cabin', sans-serif;
     font-size: 20px;
 }
+
 a {
     color: black;
 }
@@ -109,7 +110,7 @@ a {
     object-fit: cover;
 }
 
-.card-deck {
+.destinations {
     margin-bottom: 50px;
     margin-top: 50px;
 }
@@ -128,7 +129,7 @@ a {
     padding-left: 10px;
 }
 
-.beijing h4 {
+.yellowTravels h4 {
     display: block;
     position: absolute;
     top: 0;
@@ -136,56 +137,7 @@ a {
     background-color: yellow;
     color: black;
     padding: 1rem;
-}
-
-.buenosAires h4 {
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    background-color: yellow;
-    color: black;
-    padding: 1rem;
-}
-
-.madrid h4 {
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    background-color: yellow;
-    color: black;
-    padding: 1rem;
-}
-
-.mexico h4 {
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    background-color: yellow;
-    color: black;
-    padding: 1rem;
-}
-
-.nuevaYork h4 {
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    background-color: yellow;
-    color: black;
-    padding: 1rem;
-}
-
-.tokyo h4 {
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    background-color: yellow;
-    color: black;
-    padding: 1rem;
+    margin-right: 10px;
 }
 
 /*CAROUSEL*/
@@ -256,7 +208,6 @@ a {
     text-decoration-color: #FEF100;
     padding-left: 20px;
 }
-
 
 /*CONTACT*/
 
@@ -430,12 +381,17 @@ iframe {
     margin: 20px 0px;
 }
 
-.loginUser{
-padding-top: 20px;
+.loginUser {
+    padding-top: 20px;
 }
 
 .buttonDropwn {
     background-color: #141939;
+}
+
+.form-row {
+    margin-right: 0px;
+    margin-left: 0px;
 }
 
 /*MEDIA QUERY*/

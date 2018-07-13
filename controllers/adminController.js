@@ -15,7 +15,6 @@ class adminController extends Controller {
         let travelModel = new TravelModel();
         travelModel.showTravels()
         .then(((data)=>{
-            console.log(JSON.stringify(data));
              this.res.render('admin', {
                  title: 'admin',
                  layout: 'layout-single',

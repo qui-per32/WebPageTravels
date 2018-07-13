@@ -23,6 +23,7 @@ hbsUtils.registerWatchedPartials(`${__dirname}/views/partials`);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
+
 app.use(ExpressSessions({
   secret: 'GeekshubsAcademy',
   name: 'SesionGeek',

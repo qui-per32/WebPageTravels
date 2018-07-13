@@ -88,7 +88,7 @@ router.post('/recover/pass/:hash', (req, res, next) => {
     recoverController.activate();
 });
 
-router.post('/add/travel', upload.single('file'), (req, res, next) => {
+router.post('/add/travel', (req, res, next) => {
     res.render('addTravel', {
         title: 'AddTravel',
         layout: 'layout-single'

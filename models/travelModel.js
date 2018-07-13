@@ -107,7 +107,6 @@ class travelModel {
 
    showTravels() {
        return new Promise((resolve,reject)=>{
-           console.log("Accede a showTravels");
             if (!Conn) return reject("No se ha podido crear la conexión");
             const SQL = "SELECT * FROM travels;";
             Conn.query(SQL, (error, rows) => {
