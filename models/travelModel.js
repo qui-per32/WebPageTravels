@@ -118,7 +118,6 @@ class travelModel {
        })   
     }
      addTravels(travel,description,price,url) {
-         console.log("entro en add");
          
          return new Promise((resolve, reject) => {
              if (!Conn) return reject("No se ha podido crear la conexión");
@@ -132,7 +131,19 @@ class travelModel {
                  }
              })
          })
+     };
+
+     activeTravel(id, state) {
+         return new Promise((resolve, reject) => {
+             if (!Conn) return reject("No existe conexión");
+             let SQL = `UPDATE travels set active='${state === "0" ? 1 : 0}' where id='${id}';`;
+             Conn.query(SQL, (error, rows) => {
+                 if (error) return reject(error);
+                 else return resolve(rows);
+             })
+         })
      }
+
 }
 
 module.exports = travelModel;

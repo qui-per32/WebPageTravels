@@ -2,6 +2,7 @@
     <div class="container-fluid destinations d-none d-lg-block" id="destination">
         <div class="row">
             {{#each travels}}
+             {{#if active}}
             <div class="card d-none d-lg-block yellowTravels col-4">
                 <img class="card-img-top shadow-lg rounded" src="{{url}}" alt="beijing">
                 <figure class="text-block">
@@ -16,6 +17,7 @@
                 </div>
 
             </div>
+            {{/if}}
             {{/each}}
         </div>
 

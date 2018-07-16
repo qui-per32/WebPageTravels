@@ -16,16 +16,19 @@ class adminController extends Controller {
         let travelModel = new TravelModel();
         travelModel.addTravels(travel, description, price, originalname)
             .then((add)=>{
-                console.log(JSON.stringify(add));
-                
-                if (add.travel == travel || add.url == originalname) {
-                    this.req.flash('add', 'El viaje o el archivo ya existe');
-                } else {
-                    console.log("viaje añadido");
                     this.res.redirect('/admin');
-                }
             })
+    }
 
+    activeTravel() {
+        const id = this.req.params.id;
+        const state = this.req.params.state;
+        
+        let travelModel = new TravelModel();
+        travelModel.activeTravel(id, state)
+        .then((active)=>{
+            this.res.redirect('/admin');
+        })
     }
 
     index() {

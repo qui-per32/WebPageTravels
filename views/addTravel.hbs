@@ -22,8 +22,16 @@
                         <div class="form-row align-items-center custom-file text-left inputRegister">
                             <input type="file" class="form-control custom-file-input" id="validatedCustomFile" name="file" required>
                             <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
-                            <div class="invalid-feedback">Example invalid custom file feedback</div>
+                             {{#if add}}
+                            <div>
+                                <div class="alert alert-success alert-dismissible">
+                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                    <strong>ERROR</strong> {{add}}
+                                </div>
+                            </div>
+                            {{/if}}
                         </div>
+                         
                         <button class="btn btn-primary inputRegister" type="submit">Añadir</button>
                 </div>
                 </form>

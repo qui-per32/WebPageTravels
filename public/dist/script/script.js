@@ -31,3 +31,8 @@
     }, false);
 
 })();
+
+
+function toggleActive(id, activeState) {
+    window.location = "http://localhost:3000/active/" + id + "/" + activeState;
+}
