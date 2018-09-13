@@ -128,7 +128,15 @@ a {
     word-wrap: break-word;
     padding-left: 10px;
 }
-
+.travel {
+    margin: 10px 0;
+}
+.yellowTravels {
+   
+   
+    position: relative;
+    
+}
 .yellowTravels h4 {
     display: block;
     position: absolute;
@@ -137,7 +145,7 @@ a {
     background-color: yellow;
     color: black;
     padding: 1rem;
-    margin-right: 10px;
+   
 }
 
 /*CAROUSEL*/

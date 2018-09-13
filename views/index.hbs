@@ -3,19 +3,22 @@
         <div class="row">
             {{#each travels}}
              {{#if active}}
-            <div class="card d-none d-lg-block yellowTravels col-4">
-                <img class="card-img-top shadow-lg rounded" src="{{url}}" alt="beijing">
-                <figure class="text-block">
-                    <figcaption>
-                        <p>{{description}}</p>
-                        <h4>{{price}}</h4>
-                    </figcaption>
-                </figure>
+            <div class="card d-none d-lg-block travel  col-4">
 
-                <div class="card-body text-center">
-                    <h5 class="card-title">{{travel}}</h5>
-                </div>
+               <div class="yellowTravels">
+                    <img class="card-img-top shadow-lg rounded" src="{{url}}" alt="beijing">
+                    <figure class="text-block">
+                        <figcaption>
+                            <p>{{description}}</p>
+                            <h4>{{price}}</h4>
+                        </figcaption>
+                    </figure>
+                    
+                    <div class="card-body text-center">
+                        <h5 class="card-title">{{travel}}</h5>
+                    </div>
 
+               </div>
             </div>
             {{/if}}
             {{/each}}
@@ -67,7 +70,7 @@
             </div>
             
         </div>
-        <nav arial-label="Page navigation example">
+        {{!-- <nav arial-label="Page navigation example">
             <ul class="pagination">
                 <!--enlace anterior -->
                 {{#with paginate}} {{#if hasPreviousPages}}
@@ -89,7 +92,7 @@
                 </li>
                 {{/has_next_links}} {{/with}}
             </ul>
-        </nav>
+        </nav> --}}
     </div>
 
 </div>

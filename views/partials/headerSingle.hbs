@@ -62,6 +62,9 @@
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                     <a class="dropdown-item" href="#">Profile</a>
+                                    {{#if admin}}
+                                    <a class="dropdown-item" href="/admin">admin</a>
+                                    {{/if}}
                                     <a class="dropdown-item" href="/closeSession">Log out</a>
                                 </div>
                         </div>
@@ -100,6 +103,11 @@
                             <li class="nav-item active">
                                 <a class="nav-link font-italic" href="#">Profile</a>
                             </li>
+                            {{#if admin}}
+                            <li class="nav-item active">
+                                <a class="nav-link font-italic" href="/admin">Admin</a>
+                            </li>
+                            {{/if}}
                             <li class="nav-item active">
                                 <a class="nav-link font-italic" href="/closeSession">Log out</a>
                             </li>
