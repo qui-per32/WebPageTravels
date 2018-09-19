@@ -23,11 +23,9 @@ class loginController extends Controller {
 
                     if (secureService.comparePass(pass, info[0].password)) {
                         this.req.session.user = username;
-                        let admin = info[0].admin;
-                        console.log(info[0].admin);
+                        this.req.session.admin = info[0].admin;
                         let homeController = new HomeController(this.req, this.res, this.next);
-     
-                        homeController.index(admin, username)
+                        homeController.index();
                         
                     } else {
                         this.req.flash('info', 'La contraseña es incorrecta');
