@@ -36,3 +36,7 @@
 function toggleActive(id, activeState) {
     window.location = "http://localhost:3000/active/" + id + "/" + activeState;
 }
+
+function removeTravel(id) {
+    window.location = "http://localhost:3000/removeTravel/" + id;
+}

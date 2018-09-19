@@ -33,6 +33,16 @@ class adminController extends Controller {
             })
     }
 
+    removeTravel(){
+        const id = this.req.params.id;
+
+        let travelModel = new TravelModel();
+        travelModel.removeTravel(id)
+        .then((remove)=>{
+            this.res.redirect('/admin');
+        })
+    }
+
     index() {
         let user = this.user;
         if (user === undefined) {

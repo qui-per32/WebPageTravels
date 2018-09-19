@@ -1,14 +1,6 @@
 const Conn = require("../helpers/mysqlconnection");
 
 class travelModel {
-    // getAll(cb) {
-    //     if (!Conn) return cb("No se ha creado la conexión");
-    //     const SQL = "SELECT * FROM usuarios;";
-    //     Conn.query(SQL, (error, rows) => {
-    //         if (error) return cb(error);
-    //         return cb(rows);
-    //     });
-    // }
 
     findUser(username) {
         return new Promise((resolve,reject)=>{
@@ -137,6 +129,17 @@ class travelModel {
          return new Promise((resolve, reject) => {
              if (!Conn) return reject("No existe conexión");
              let SQL = `UPDATE travels set active='${state === "0" ? 1 : 0}' where id='${id}';`;
+             Conn.query(SQL, (error, rows) => {
+                 if (error) return reject(error);
+                 else return resolve(rows);
+             })
+         })
+     }
+
+     removeTravel(id) {
+         return new Promise((resolve, reject) => {
+             if (!Conn) return reject("No existe conexión");
+             let SQL = `DELETE FROM travelDatabase.travels WHERE id='${id}';`;
              Conn.query(SQL, (error, rows) => {
                  if (error) return reject(error);
                  else return resolve(rows);

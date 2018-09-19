@@ -16,8 +16,6 @@
                                 <tr>
                                     <th scope="col">Id</th>
                                     <th scope="col">Viajes</th>
-                                    {{!--
-                                    <th scope="col">Fechas</th> --}}
                                     <th scope="col">Descripción</th>
                                     <th scope="col">Imagen</th>
                                     <th scope="col">Precio</th>
@@ -44,7 +42,7 @@
                                         </div>
                                     </td>
                                     <td>
-                                        <button type="button" class="btn btn-danger btn-sm">
+                                        <button type="button" class="btn btn-danger btn-sm" onclick="removeTravel({{id}})">
                                             <i class="fa fa-trash"></i>
                                         </button>
                                     </td>
