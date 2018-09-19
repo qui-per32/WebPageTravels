@@ -128,15 +128,15 @@ a {
     word-wrap: break-word;
     padding-left: 10px;
 }
+
 .travel {
     margin: 10px 0;
 }
+
 .yellowTravels {
-   
-   
     position: relative;
-    
 }
+
 .yellowTravels h4 {
     display: block;
     position: absolute;
@@ -145,7 +145,7 @@ a {
     background-color: yellow;
     color: black;
     padding: 1rem;
-   
+
 }
 
 /*CAROUSEL*/
@@ -185,6 +185,8 @@ a {
 .carouselImages {
     margin-top: 50px;
 }
+
+
 
 /*LAYOUT AND STYLE WHO*/
 
@@ -408,14 +410,17 @@ iframe {
     .footer {
         margin-top: 0;
     }
+
     .footerMobile {
         text-align: center;
     }
+
     #subscribeButton {
         text-align: center;
         width: auto;
         padding-left: 0;
     }
+
     .QSBox {
         background: #5DBCD2;
         margin-top: 50px;

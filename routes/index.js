@@ -105,5 +105,10 @@ router.get('/active/:id/:state', (req, res, next) => {
     adminController.activeTravel();
 })
 
+router.get('/removeTravel/:id', (req, res, next) => {
+    let adminController = new AdminController(req, res, next);
+    adminController.removeTravel();
+})
+
 
 module.exports = router;
