@@ -97,10 +97,10 @@ class travelModel {
        })
    };
 
-   showTravels() {
+   showTravels(productId) {
        return new Promise((resolve,reject)=>{
             if (!Conn) return reject("No se ha podido crear la conexión");
-            const SQL = "SELECT * FROM travels;";
+            const SQL = `SELECT * FROM travels where id='${productId}';`;
             Conn.query(SQL, (error, rows) => {
                 if (error) return reject(error);
                 else {

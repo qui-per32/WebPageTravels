@@ -21,6 +21,11 @@ router.get('/', function (req, res, next) {
     homeController.index();
 });
 
+router.get('/addTravel/:id', function (req, res, next) {
+    let homeController = new HomeController(req, res, next);
+    homeController.addTravel();
+});
+
 router.get('/register', (req, res, next) => {
     let registerController = new RegisterController(req, res, next);
     registerController.index();
