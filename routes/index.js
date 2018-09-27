@@ -8,6 +8,7 @@ const NewPassController = require('../controllers/newPassController');
 const ActivateUserController = require('../controllers/activateUserController');
 const SessionController = require('../controllers/sessionController');
 const RecoverController = require('../controllers/recoverController');
+const CartController = require('../controllers/cartController');
 const UploadService = require('../service/uploadService');
 let uploadService = new UploadService();
 let upload = uploadService.up();
@@ -22,8 +23,8 @@ router.get('/', function (req, res, next) {
 });
 
 router.get('/addTravel/:id', function (req, res, next) {
-    let homeController = new HomeController(req, res, next);
-    homeController.addTravel();
+    let cartController = new CartController(req, res, next);
+    cartController.index();
 });
 
 router.get('/register', (req, res, next) => {

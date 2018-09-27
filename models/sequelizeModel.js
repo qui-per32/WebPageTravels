@@ -17,7 +17,7 @@ const Travel = connect.define('travels', {
         type: Sequelize.TINYINT(4)
     },
     price: {
-        type: Sequelize.STRING(45)
+        type: Sequelize.INTEGER(20)
     },
     type: {
         type: Sequelize.STRING(45)

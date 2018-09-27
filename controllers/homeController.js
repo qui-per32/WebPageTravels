@@ -43,40 +43,34 @@ class homeController extends Controller {
         // let travelModel = new TravelModel();
         // travelModel.showTravels()
         //     .then(((travels) => {
-          
 
-            //     this.res.render('index', {
-            //         title: 'WebPageTravels',
-            //         layout: this.user ? 'layout-single' : 'layout',
-            //         user: this.user,
-            //         admin: this.admin,
-            //         travels: travels
-            //     });
-            // }))
+
+        //     this.res.render('index', {
+        //         title: 'WebPageTravels',
+        //         layout: this.user ? 'layout-single' : 'layout',
+        //         user: this.user,
+        //         admin: this.admin,
+        //         travels: travels
+        //     });
+        // }))
 
 
     }
 
-    addTravel(){
-        var productId = this.req.params.id;
-        console.log(productId);
-        
+    // addTravel() {
+    //     let productId = parseInt(this.req.params.id);
 
-        let travelModel = new TravelModel();
-        travelModel.showTravels(productId)
-            .then(((travels) => {
-                console.log(travels);
+    //     SequelizeModel.findAll({
+    //         where : {
+    //             id: productId
+    //         }
+    //     } )
+    //         .then(((product) => {
+    //             console.log(product);
                 
-
-
-            // this.res.render('index', {
-            //     title: 'WebPageTravels',
-            //     layout: this.user ? 'layout-single' : 'layout',
-            //     user: this.user,
-            //     cart: travels
-            // });
-        }))
-    }
+    //           this.req.session.cart = product;
+    //         }))
+    // }
 }
 
 module.exports = homeController;
