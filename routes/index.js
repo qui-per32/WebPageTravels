@@ -4,6 +4,8 @@ const HomeController = require('../controllers/homeController');
 const RegisterController = require('../controllers/registerController');
 const LoginController = require('../controllers/loginController');
 const AdminController = require('../controllers/adminController');
+const AddTravelController = require('../controllers/addTravelcontroller');
+const EditTravelController = require('../controllers/editTravelcontroller');
 const NewPassController = require('../controllers/newPassController');
 const ActivateUserController = require('../controllers/activateUserController');
 const SessionController = require('../controllers/sessionController');
@@ -94,11 +96,9 @@ router.post('/recover/pass/:hash', (req, res, next) => {
     recoverController.activate();
 });
 
-router.post('/add/travel', (req, res, next) => {
-    res.render('addTravel', {
-        title: 'AddTravel',
-        layout: 'layout-single'
-    })
+router.get('/add/travel', (req, res, next) => {
+    let addTravelController = new AddTravelController(req,res,next);
+    addTravelController.index();
 })
 
 router.post('/add', upload.single('file'),(req,res,next)=>{
@@ -114,6 +114,16 @@ router.get('/active/:id/:state', (req, res, next) => {
 router.get('/removeTravel/:id', (req, res, next) => {
     let adminController = new AdminController(req, res, next);
     adminController.removeTravel();
+})
+
+router.get('/editTravel/:id', (req, res, next) => {
+    let editTravelController = new EditTravelController(req, res, next);
+    editTravelController.index();
+})
+
+router.post('/editTravel/:id', upload.single('file'), (req, res, next) => {
+    let editTravelController = new EditTravelController(req, res, next);
+    editTravelController.editTravel();
 })
 
 
