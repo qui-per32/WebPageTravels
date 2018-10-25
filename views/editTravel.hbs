@@ -1,0 +1,40 @@
+<div class="container-fluid">
+    <div class="row loginBackground d-flex align-items-center" id="LoginPage">
+        <div class="offset-3 col-6">
+            <div class="row loginContainer text-center d-flex align-items-center">
+                <div class="offset-2 col-8">
+                    <form class="needs-validation" enctype="multipart/form-data" method="post" role="form" action="/editTravel/{{id}}"
+                        novalidate>
+                        {{#each travelId}}
+                        <div class="form-row align-items-center">
+
+                            <input type="text" class="form-control inputRegister" id="validationCustom01" name="travel"
+                                value="{{travel}}" required>
+
+                        </div>
+                        <div class="form-row align-items-center">
+
+                            <input type="text" class="form-control inputRegister" id="validationCustom02" name="price"
+                                value="{{price}}" required>
+
+                        </div>
+                        <div class="form-row align-items-center">
+
+                            <input type="text" name="description" class="form-control inputRegister" id="exampleInputPassword1"
+                                value="{{description}}" required>
+
+                        </div>
+                        <div class="form-row align-items-center custom-file text-left inputRegister">
+                            <input type="file" class="form-control custom-file-input" id="validatedCustomFile" name="file"
+                                required>
+                            <label class="custom-file-label" for="validatedCustomFile">{{url}}</label>
+                        </div>
+
+                        <button class="btn btn-primary inputRegister" type="submit">Añadir</button>
+                </div>
+                {{/each}}
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -40,3 +40,9 @@ function toggleActive(id, activeState) {
 function removeTravel(id) {
     window.location = "http://localhost:3000/removeTravel/" + id;
 }
+
+function editTravel(id) {
+    
+    window.location = "http://localhost:3000/editTravel/" + id;
+}
+

@@ -43,6 +43,23 @@ class adminController extends Controller {
         })
     }
 
+    // editTravel() {
+    //     const id = this.req.params.id;
+
+    //     const {
+    //         price,
+    //         description,
+    //         travel
+    //     } = this.req.body;
+    //     const originalname = `/images/${this.req.file.originalname}`;
+
+    //     let travelModel = new TravelModel();
+    //     travelModel.editTravel(id)
+    //         .then((remove) => {
+    //             this.res.redirect('/admin');
+    //         })
+    // }
+
     index() {
         let user = this.user;
         if (user === undefined) {
